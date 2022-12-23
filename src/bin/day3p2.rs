@@ -11,6 +11,11 @@ trait Priority {
 
 impl Common for [String] {
     fn common(&self) -> Option<char> {
+        assert_eq!(
+            3,
+            self.len(),
+            "The String array must have exactly 3 elements."
+        );
         let mut strings = self.to_owned();
         strings.sort();
 
