@@ -6,10 +6,9 @@ fn main() {
     let mut sum: i64 = 0;
     let mut max: i64 = 0;
 
-
-    while stdin.lock().read_line(&mut line).unwrap() != 0{
-        if line == "\n"{
-            if &sum > &max{
+    while stdin.lock().read_line(&mut line).unwrap() != 0 {
+        if line == "\n" {
+            if &sum > &max {
                 max = sum;
             }
             sum = 0;
@@ -20,5 +19,4 @@ fn main() {
         line.clear();
     }
     println!("{}", max)
-
 }
