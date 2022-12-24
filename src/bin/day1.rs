@@ -8,7 +8,7 @@ fn main() {
 
     while stdin.lock().read_line(&mut line).unwrap() != 0 {
         if line == "\n" {
-            if &sum > &max {
+            if sum > max {
                 max = sum;
             }
             sum = 0;

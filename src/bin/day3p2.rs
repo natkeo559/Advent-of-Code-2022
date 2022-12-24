@@ -23,20 +23,18 @@ impl Common for [String] {
 
         let t: HashSet<char> = strings[2].chars().filter(|c| s.contains(c)).collect();
 
-        strings[1].chars().filter(|c| t.contains(c)).next()
+        strings[1].chars().find(|c| t.contains(c))
     }
 }
 
 impl Priority for char {
     fn priority(self) -> u32 {
-        let r = (self as u32) - if self.is_uppercase() { 38 } else { 96 };
-
-        r
+        (self as u32) - if self.is_uppercase() { 38 } else { 96 }
     }
 }
 
 fn main() {
-    let file_lines = read_to_string("./input/day3p2.txt")
+    let file_lines = read_to_string("./input/day3.txt")
         .expect("Could not find input file")
         .lines()
         .map(|l| l.to_owned())

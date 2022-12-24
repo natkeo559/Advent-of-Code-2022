@@ -18,15 +18,13 @@ impl Common for str {
         };
 
         let s: HashSet<char> = shorter.chars().collect();
-        longer.chars().filter(|c| s.contains(c)).next()
+        longer.chars().find(|c| s.contains(c))
     }
 }
 
 impl Priority for char {
     fn priority(self) -> u32 {
-        let r = (self as u32) - if self.is_uppercase() { 38 } else { 96 };
-
-        r
+        (self as u32) - if self.is_uppercase() { 38 } else { 96 }
     }
 }
 

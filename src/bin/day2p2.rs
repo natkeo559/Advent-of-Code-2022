@@ -15,7 +15,7 @@ fn score(lines: Vec<String>) -> i32 {
 
     let a = lines.iter().map(|l| {
         score_map_a
-            .get(&l.chars().nth(0).unwrap())
+            .get(&l.chars().next().unwrap())
             .unwrap()
             .to_owned()
     });
