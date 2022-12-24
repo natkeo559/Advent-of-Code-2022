@@ -25,9 +25,9 @@ fn shared(p: Vec<Pair>) -> Option<bool> {
 
     let u = set_l.intersection(&set_r).count();
 
-    match u > 0{
+    match u > 0 {
         true => Some(true),
-        false => None
+        false => None,
     }
 }
 
