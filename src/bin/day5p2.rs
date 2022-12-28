@@ -43,7 +43,7 @@ impl Process for Vec<Vec<char>> {
             }
         }
         group.reverse();
-        for c in group{
+        for c in group {
             self[instruction.to].push(c);
         }
     }
