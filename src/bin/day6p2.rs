@@ -17,8 +17,7 @@ fn main() {
     let chars_before_code = signal_chars
         .windows(14)
         .enumerate()
-        .filter_map(|(i, w)| check(i, w))
-        .next()
+        .find_map(|(i, w)| check(i, w))
         .unwrap();
 
     println!("{}", chars_before_code);
